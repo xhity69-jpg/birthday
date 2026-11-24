@@ -1,0 +1,1877 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Devyashree ♡</title>
+<meta name="description" content="Three little games, one wish, and a letter.">
+<meta name="theme-color" content="#fff3ee">
+<meta property="og:title" content="Happy Birthday, Devyashree ♡">
+<meta property="og:description" content="Three little games, one wish, and a letter.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   Happy Birthday, Devyashree
+   ───────────────────────────────────────────── */
+
+:root{
+  --cream:#fff8f4;
+  --card:#fffdfb;
+  --rose:#e2607d;
+  --rose-deep:#b93f5c;
+  --blush:#ffdde6;
+  --plum:#4e3040;
+  --gold:#d8a85b;
+  --ink:#543a45;
+  --muted:#94737f;
+  --line:#f2dde3;
+  --shadow-soft:0 18px 40px -22px rgba(150,70,95,.45);
+  --shadow-lift:0 32px 80px -32px rgba(150,70,95,.5);
+  --serif:"Playfair Display", "Iowan Old Style", Georgia, serif;
+  --sans:"Quicksand", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --script:"Great Vibes", "Segoe Script", cursive;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  min-height:100dvh;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:500;
+  line-height:1.6;
+  background:
+    radial-gradient(1200px 800px at 10% 4%, #fff4ec 0%, rgba(255,244,236,0) 60%),
+    radial-gradient(900px 700px at 92% 10%, #ffe7f0 0%, rgba(255,231,240,0) 58%),
+    radial-gradient(1100px 900px at 50% 112%, #f2e7ff 0%, rgba(242,231,255,0) 62%),
+    linear-gradient(165deg,#fffaf6 0%,#fff1f5 48%,#f8eeff 100%);
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+
+img,svg{ max-width:100%; }
+[hidden]{ display:none !important; }
+
+::selection{ background:#ffd3de; color:var(--rose-deep); }
+
+/* ── ambient petals ─────────────────────────── */
+
+#sky{
+  position:fixed; inset:0;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+.petal{
+  position:absolute;
+  top:-8vh;
+  border-radius:50% 50% 48% 52% / 60% 60% 40% 40%;
+  background:linear-gradient(160deg, rgba(255,255,255,.9), rgba(255,190,210,.75));
+  box-shadow:0 0 12px rgba(255,255,255,.6);
+  opacity:0;
+  animation-name:petalFall;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  will-change:transform,opacity;
+}
+@keyframes petalFall{
+  0%{ transform:translate3d(0,-10vh,0) rotate(0deg); opacity:0; }
+  8%{ opacity:.85; }
+  50%{ transform:translate3d(38px,55vh,0) rotate(180deg); }
+  92%{ opacity:.65; }
+  100%{ transform:translate3d(-26px,112vh,0) rotate(340deg); opacity:0; }
+}
+
+/* ── canvas confetti ────────────────────────── */
+
+#confetti{
+  position:fixed; inset:0;
+  width:100%; height:100%;
+  pointer-events:none;
+  z-index:60;
+}
+
+/* ── music button ───────────────────────────── */
+
+.music-btn{
+  position:fixed;
+  top:calc(14px + env(safe-area-inset-top));
+  right:14px;
+  z-index:70;
+  width:46px; height:46px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  border:1px solid rgba(226,96,125,.28);
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  color:var(--rose-deep);
+  font-size:1.15rem;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-6px);
+  transition:opacity .5s ease, transform .5s ease, background .3s ease, visibility .5s ease;
+  box-shadow:0 8px 24px -14px rgba(185,63,92,.6);
+}
+body.music-ready .music-btn{ opacity:.9; visibility:visible; transform:none; }
+body.music-ready .music-btn:hover{ background:#fff; }
+.music-btn__icon{ display:block; transform:translateY(-1px); }
+.music-btn.is-on .music-btn__icon{ animation:notePulse 1.9s ease-in-out infinite; }
+.music-btn.is-muted .music-btn__icon{ opacity:.4; }
+@keyframes notePulse{
+  0%,100%{ transform:translateY(-1px) scale(1); }
+  50%{ transform:translateY(-3px) scale(1.14); }
+}
+
+/* ── screens ───────────────────────────────── */
+
+#app{ position:relative; z-index:1; }
+
+.screen{
+  display:none;
+  min-height:100dvh;
+  padding:clamp(28px,6vw,72px) clamp(16px,4vw,40px);
+  place-items:center;
+}
+.screen.is-active{ display:grid; animation:screenIn .8s cubic-bezier(.2,.8,.25,1) both; }
+.screen--stage{ align-content:start; padding-top:clamp(20px,4vw,44px); }
+.screen--stage.is-active{ place-items:start center; }
+
+@keyframes screenIn{
+  from{ opacity:0; transform:translateY(14px) scale(.995); }
+  to{ opacity:1; transform:none; }
+}
+
+.eyebrow{
+  margin:0 0 .9rem;
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.ink-gradient{
+  background:linear-gradient(100deg,#e2607d 0%,#c2589a 46%,#8b6ad6 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hint{
+  margin:.9rem 0 0;
+  font-size:.82rem;
+  color:var(--muted);
+  letter-spacing:.02em;
+}
+
+/* ── buttons ────────────────────────────────── */
+
+.btn{
+  -webkit-appearance:none;
+  appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  padding:.92rem 1.9rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-family:var(--sans);
+  font-size:.98rem;
+  font-weight:600;
+  letter-spacing:.01em;
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform .25s cubic-bezier(.2,.8,.25,1), box-shadow .3s ease, background .3s ease, color .3s ease, opacity .3s ease;
+}
+.btn:active{ transform:scale(.97); }
+
+.btn--primary{
+  background:linear-gradient(120deg,#e2607d,#c2589a 60%,#a45ec4);
+  color:#fff;
+  box-shadow:0 18px 36px -16px rgba(185,63,92,.75), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.btn--primary:hover{ transform:translateY(-2px); box-shadow:0 24px 44px -18px rgba(185,63,92,.8), inset 0 1px 0 rgba(255,255,255,.4); }
+
+.btn--ghost{
+  background:rgba(255,255,255,.82);
+  border-color:rgba(226,96,125,.3);
+  color:var(--rose-deep);
+  box-shadow:0 10px 24px -18px rgba(185,63,92,.7);
+}
+.btn--ghost:hover{ background:#fff; transform:translateY(-2px); }
+.btn--ghost.is-listening{
+  border-color:var(--gold);
+  color:#9a6b1f;
+  animation:breathe 1.6s ease-in-out infinite;
+}
+.btn--small{ padding:.6rem 1.15rem; font-size:.85rem; }
+.btn--link{
+  background:none; border:0; padding:.4rem .2rem;
+  color:var(--muted); font-size:.85rem;
+  text-decoration:underline; text-underline-offset:4px;
+  text-decoration-color:rgba(148,115,127,.4);
+}
+.btn--link:hover{ color:var(--rose-deep); }
+
+.btn:focus-visible,
+.balloon:focus-visible,
+.candle:focus-visible,
+.envelope:focus-visible,
+.match__card:focus-visible,
+.music-btn:focus-visible{
+  outline:2px solid rgba(226,96,125,.65);
+  outline-offset:4px;
+}
+
+@keyframes breathe{ 0%,100%{ box-shadow:0 0 0 0 rgba(216,168,91,.35); } 50%{ box-shadow:0 0 0 10px rgba(216,168,91,0); } }
+
+/* ── intro ─────────────────────────────────── */
+
+.intro__inner{
+  text-align:center;
+  max-width:620px;
+  animation:screenIn 1s .1s both;
+}
+
+.intro__title{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(2.6rem,10vw,4.6rem);
+  line-height:1.03;
+  letter-spacing:-.02em;
+  margin:0 0 1rem;
+  color:var(--plum);
+}
+
+.intro__sub{
+  margin:0 auto 2.1rem;
+  max-width:34ch;
+  color:var(--muted);
+  font-size:clamp(.96rem,2.7vw,1.06rem);
+  line-height:1.75;
+}
+
+/* ── stage / hud ───────────────────────────── */
+
+.stage__inner{
+  width:min(960px,100%);
+  margin:0 auto;
+}
+
+.hud{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:clamp(18px,4vw,34px);
+}
+.hud__label{
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+}
+.dots{ display:flex; gap:8px; }
+.dot{
+  width:7px; height:7px; border-radius:50%;
+  background:rgba(185,63,92,.18);
+  transition:background .4s ease, transform .4s ease, width .4s ease;
+}
+.dot.is-current{ background:var(--rose); width:22px; border-radius:999px; }
+.dot.is-done{ background:rgba(185,63,92,.5); }
+
+/* ── rounds ────────────────────────────────── */
+
+.round{ display:none; }
+.round.is-active{ display:block; animation:screenIn .7s cubic-bezier(.2,.8,.25,1) both; }
+
+.round__title{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(1.9rem,6.4vw,2.9rem);
+  letter-spacing:-.015em;
+  color:var(--plum);
+  margin:0 0 .45rem;
+  text-align:center;
+}
+.round__sub{
+  margin:0 auto;
+  max-width:46ch;
+  text-align:center;
+  color:var(--muted);
+  font-size:clamp(.9rem,2.5vw,1rem);
+  line-height:1.7;
+}
+
+.round__foot{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.4rem;
+  margin-top:clamp(18px,3.5vw,28px);
+}
+
+/* ── round 1 · balloons ────────────────────── */
+
+.balloon-field{
+  position:relative;
+  height:clamp(280px,42vh,380px);
+  margin:clamp(10px,2vw,20px) 0 0;
+  transition:height .9s cubic-bezier(.2,.8,.25,1) .45s;
+}
+.balloon-field.is-done{ height:16px; }
+
+.balloon{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:clamp(50px,8.6vw,70px);
+  aspect-ratio:.82;
+  padding:0;
+  border:0;
+  background:none;
+  cursor:pointer;
+  transform-origin:50% 100%;
+  animation:drift var(--dr, 5.4s) ease-in-out infinite alternate;
+  animation-delay:var(--delay,0s);
+  -webkit-tap-highlight-color:transparent;
+}
+.balloon__body{
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:50% 50% 47% 47% / 44% 44% 56% 56%;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255,255,255,.92) 0%, rgba(255,255,255,0) 42%),
+    radial-gradient(circle at 62% 72%, var(--c1,#f7a9bd) 0%, var(--c2,#e2607d) 78%);
+  box-shadow:inset -7px -10px 20px rgba(120,40,70,.16), 0 16px 26px -18px rgba(150,70,95,.8);
+  transition:transform .18s ease;
+}
+.balloon__body::after{
+  content:"";
+  position:absolute;
+  bottom:-6px; left:50%;
+  width:11px; height:9px;
+  transform:translateX(-50%);
+  background:var(--c2,#e2607d);
+  clip-path:polygon(50% 0,100% 100%,0 100%);
+  border-radius:0 0 3px 3px;
+  opacity:.9;
+}
+.balloon:hover .balloon__body{ transform:scale(1.04); }
+
+.balloon__string{
+  position:absolute;
+  left:50%;
+  top:calc(100% + 4px);
+  width:1px;
+  height:clamp(48px,9vh,82px);
+  background:linear-gradient(to bottom, rgba(148,115,127,.5), rgba(148,115,127,0));
+  transform-origin:top center;
+  animation:sway 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes drift{
+  from{ transform:translateY(-9px) rotate(-2.5deg); }
+  to{ transform:translateY(9px) rotate(2.5deg); }
+}
+@keyframes sway{
+  from{ transform:rotate(-5deg); }
+  to{ transform:rotate(5deg); }
+}
+
+.balloon.is-popped{ pointer-events:none; }
+.balloon.is-popped .balloon__body{ animation:popOut .45s cubic-bezier(.2,.8,.25,1) forwards; }
+.balloon.is-popped .balloon__string{ opacity:0; transition:opacity .25s ease; }
+.balloon.is-popped{ animation-play-state:paused; }
+
+@keyframes popOut{
+  0%{ transform:scale(1); opacity:1; }
+  45%{ transform:scale(1.28); opacity:1; }
+  100%{ transform:scale(.55); opacity:0; }
+}
+
+.wishes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+  margin-top:clamp(12px,2.5vw,20px);
+}
+.wish{
+  position:relative;
+  margin:0;
+  padding:.85rem 1rem .85rem 2.35rem;
+  border-radius:16px;
+  background:rgba(255,253,251,.9);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);
+  font-size:.92rem;
+  line-height:1.55;
+  color:#5f4450;
+  animation:wishIn .55s cubic-bezier(.2,.8,.25,1) both;
+}
+.wish::before{
+  content:"♡";
+  position:absolute;
+  left:.9rem; top:.72rem;
+  color:var(--rose);
+  font-size:.95rem;
+  line-height:1.4;
+}
+@keyframes wishIn{
+  from{ opacity:0; transform:translateY(10px) scale(.96); }
+  to{ opacity:1; transform:none; }
+}
+
+/* ── round 2 · memory ──────────────────────── */
+
+.match{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(7px,2.2vw,13px);
+  width:min(520px,100%);
+  margin:clamp(18px,3.5vw,28px) auto 0;
+}
+
+.match__card{
+  -webkit-appearance:none;
+  appearance:none;
+  padding:0;
+  border:0;
+  background:none;
+  aspect-ratio:3/4;
+  perspective:900px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.match__inner{
+  position:relative;
+  display:block;
+  width:100%; height:100%;
+  transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.2,.8,.25,1);
+}
+.match__card.is-flipped .match__inner{ transform:rotateY(180deg); }
+
+.match__face{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  border:1px solid rgba(226,96,125,.18);
+  box-shadow:var(--shadow-soft);
+}
+.match__face--back{
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255,255,255,.65), rgba(255,255,255,0) 45%),
+    linear-gradient(150deg,#ffd9e2 0%,#f4bcd6 45%,#dcb9f2 100%);
+}
+.match__face--back::before{
+  content:"♡";
+  font-size:1.55rem;
+  color:rgba(255,255,255,.9);
+  text-shadow:0 2px 8px rgba(185,63,92,.35);
+}
+.match__face--front{
+  transform:rotateY(180deg);
+  background:linear-gradient(170deg,#fffdfb,#fff6f2);
+  font-size:clamp(1.7rem,6vw,2.4rem);
+}
+.match__card.is-matched .match__face--front{
+  box-shadow:0 0 0 2px rgba(216,168,91,.7) inset, var(--shadow-soft);
+  background:linear-gradient(170deg,#fffaf0,#fff3e4);
+}
+.match__card.is-matched{ cursor:default; }
+.match__card.is-matched .match__face--front{ animation:matchGlow .85s ease; }
+@keyframes matchGlow{
+  0%{ box-shadow:0 0 0 0 rgba(216,168,91,.75) inset, var(--shadow-soft); }
+  55%{ box-shadow:0 0 0 7px rgba(216,168,91,.28) inset, var(--shadow-soft); }
+  100%{ box-shadow:0 0 0 2px rgba(216,168,91,.7) inset, var(--shadow-soft); }
+}
+
+.match__note{
+  min-height:1.6em;
+  margin:1.15rem auto 0;
+  max-width:42ch;
+  text-align:center;
+  color:var(--rose-deep);
+  font-size:.9rem;
+  line-height:1.6;
+  transition:opacity .3s ease;
+}
+.match__note.is-swapping{ opacity:0; }
+
+/* ── round 3 · cake ────────────────────────── */
+
+.cake{
+  position:relative;
+  width:min(300px,76vw);
+  height:250px;
+  margin:clamp(24px,5vw,40px) auto .5rem;
+}
+.cake__plate{
+  position:absolute;
+  pointer-events:none;
+  left:-7%; bottom:0;
+  width:114%; height:20px;
+  border-radius:50%;
+  background:linear-gradient(#ffffff,#f4e6ec);
+  box-shadow:0 18px 30px -14px rgba(150,70,95,.45);
+}
+.cake__body{
+  position:absolute;
+  left:9%; bottom:12px;
+  width:82%; height:104px;
+  border-radius:12px 12px 16px 16px;
+  background:
+    radial-gradient(circle at 22% 22%, rgba(255,255,255,.5), rgba(255,255,255,0) 40%),
+    linear-gradient(180deg,#ffe6ee 0%,#f9c3d4 42%,#e9a0bb 100%);
+  box-shadow:inset 0 -16px 26px -18px rgba(150,50,85,.5), 0 14px 24px -18px rgba(150,70,95,.6);
+}
+.cake__body::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:-1px;
+  height:26px;
+  border-radius:12px 12px 50% 50%;
+  background:linear-gradient(180deg,#fffdfa,#ffedf2);
+  box-shadow:0 6px 10px -6px rgba(150,70,95,.35);
+}
+.cake__body::after{
+  content:"";
+  position:absolute;
+  left:8%; right:8%; top:34%;
+  height:34px;
+  border-radius:999px;
+  background-image:
+    radial-gradient(circle, #ffffff 0 2px, transparent 2.6px),
+    radial-gradient(circle, #ffd9a8 0 2px, transparent 2.6px);
+  background-size:26px 18px, 22px 16px;
+  background-position:0 0, 12px 9px;
+  opacity:.65;
+}
+.cake__top{
+  position:absolute;
+  left:5%; bottom:110px;
+  width:90%; height:34px;
+  z-index:3;
+  pointer-events:none;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 50% 40%, #fffdfa 0%, #ffedf2 55%, #f6cfdd 100%);
+  box-shadow:0 6px 12px -8px rgba(150,70,95,.5);
+}
+
+.cake__candles{
+  position:absolute;
+  left:50%; bottom:132px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:flex-end;
+  gap:clamp(24px,8vw,34px);
+  z-index:2;
+}
+.candle{
+  position:relative;
+  width:10px; height:64px;
+  padding:0; border:0;
+  border-radius:5px;
+  background:repeating-linear-gradient(48deg,#fffdfa 0 5px,#f0a5bd 5px 10px);
+  box-shadow:inset -2px 0 4px rgba(150,70,95,.18), 0 3px 8px -4px rgba(150,70,95,.6);
+  cursor:pointer;
+  animation:candleBob 3.4s ease-in-out infinite alternate;
+  -webkit-tap-highlight-color:transparent;
+}
+.candle:nth-child(2){ animation-delay:-1.1s; }
+.candle:nth-child(3){ animation-delay:-2.2s; }
+
+.candle__flame{
+  position:absolute;
+  left:50%; top:-24px;
+  width:16px; height:24px;
+  border-radius:50% 50% 42% 42% / 62% 62% 38% 38%;
+  background:radial-gradient(circle at 50% 78%, #fffbdc 0%, #ffe08a 34%, #ffb04a 66%, rgba(255,138,52,.15) 100%);
+  box-shadow:0 0 18px 4px rgba(255,183,90,.65), 0 0 44px 12px rgba(255,150,90,.35);
+  animation:flicker 1.1s ease-in-out infinite alternate;
+  transform-origin:50% 100%;
+  transition:opacity .2s ease;
+}
+@keyframes flicker{
+  0%{ transform:translateX(-50%) rotate(-3deg) scaleY(1); }
+  50%{ transform:translateX(-50%) rotate(2deg) scaleY(1.08); }
+  100%{ transform:translateX(-50%) rotate(-1deg) scaleY(.95); }
+}
+@keyframes candleBob{
+  from{ transform:translateY(-1px); }
+  to{ transform:translateY(1px); }
+}
+
+.candle.is-out .candle__flame{
+  opacity:0;
+  transition:opacity .22s ease, transform .3s ease;
+}
+.candle.is-out::after{
+  content:"";
+  position:absolute;
+  left:50%; top:-26px;
+  width:12px; height:12px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(190,190,200,.7), rgba(190,190,200,0) 70%);
+  animation:smoke 2.2s ease-out forwards;
+}
+@keyframes smoke{
+  0%{ opacity:.75; transform:translate(-50%,0) scale(.5); }
+  100%{ opacity:0; transform:translate(-50%,-56px) scale(2.1); }
+}
+
+.cake__actions{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.15rem;
+}
+
+.wish-made{
+  text-align:center;
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,3.6vw,1.4rem);
+  color:var(--rose-deep);
+  margin:1rem 0 0;
+  animation:wishIn .8s ease both;
+}
+
+/* ── finale ────────────────────────────────── */
+
+.screen--finale{ align-content:start; padding-top:clamp(40px,9vw,88px); }
+.finale__inner{
+  width:min(720px,100%);
+  margin:0 auto;
+  text-align:center;
+}
+
+.finale__title{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(2.5rem,11vw,5rem);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  color:var(--plum);
+  margin:0 0 1rem;
+  animation:titleIn 1.1s .1s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes titleIn{
+  from{ opacity:0; transform:translateY(18px) scale(.98); filter:blur(6px); }
+  to{ opacity:1; transform:none; filter:blur(0); }
+}
+
+.finale__sub{
+  margin:0 auto 2.6rem;
+  max-width:42ch;
+  color:var(--muted);
+  font-size:clamp(.95rem,2.7vw,1.05rem);
+  line-height:1.75;
+}
+
+.envelope-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  animation:fadeUp 1s .5s both;
+}
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(16px); }
+  to{ opacity:1; transform:none; }
+}
+
+.envelope{
+  position:relative;
+  width:min(270px,74vw);
+  aspect-ratio:1.52;
+  padding:0;
+  border:1px solid #f2c6b6;
+  border-radius:14px;
+  background:linear-gradient(158deg,#ffeade,#ffd3c1);
+  box-shadow:0 26px 60px -28px rgba(150,70,95,.65), inset 0 1px 0 rgba(255,255,255,.7);
+  cursor:pointer;
+  transition:transform .45s cubic-bezier(.2,.8,.25,1), box-shadow .45s ease;
+  overflow:visible;
+}
+.envelope:hover{ transform:translateY(-5px) rotate(-.6deg); box-shadow:0 34px 70px -30px rgba(150,70,95,.7); }
+
+.envelope__letter{
+  position:absolute;
+  left:7%; bottom:8%;
+  width:86%; height:78%;
+  border-radius:6px;
+  background:linear-gradient(#fffdfa,#fff6ec);
+  box-shadow:0 4px 14px -8px rgba(150,70,95,.6);
+  transition:transform .7s cubic-bezier(.2,.8,.25,1), opacity .4s ease;
+  opacity:0;
+  z-index:1;
+}
+.envelope.is-open .envelope__letter{ opacity:1; }
+.envelope__front{
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  background:linear-gradient(150deg,#ffdfd0,#ffcbb8);
+  clip-path:polygon(0 32%, 50% 62%, 100% 32%, 100% 100%, 0 100%);
+  z-index:2;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+}
+.envelope__flap{
+  position:absolute;
+  top:0; left:0; right:0;
+  height:64%;
+  background:linear-gradient(165deg,#fff2e8,#ffdcc9);
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  border-radius:14px 14px 0 0;
+  transform-origin:top center;
+  transition:transform .8s cubic-bezier(.3,.9,.3,1);
+  filter:drop-shadow(0 8px 8px rgba(150,70,95,.16));
+  z-index:3;
+}
+.envelope__seal{
+  position:absolute;
+  left:50%; top:52%;
+  width:46px; height:46px;
+  display:grid; place-items:center;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #f2809a, #b93f5c 78%);
+  color:#fff;
+  font-size:1.05rem;
+  box-shadow:0 8px 16px -8px rgba(150,40,70,.9), inset 0 1px 2px rgba(255,255,255,.5);
+  z-index:4;
+  transition:transform .4s ease, opacity .4s ease;
+}
+.envelope:hover .envelope__seal{ transform:translate(-50%,-50%) scale(1.06); }
+
+.envelope.is-open{ pointer-events:none; }
+.envelope.is-open .envelope__flap{ transform:rotateX(-168deg); }
+.envelope.is-open .envelope__seal{ opacity:0; transform:translate(-50%,-50%) scale(.4); }
+.envelope.is-open .envelope__letter{ transform:translateY(-46%); }
+.envelope.is-open{ animation:envelopeAway .9s .35s cubic-bezier(.2,.8,.25,1) forwards; }
+@keyframes envelopeAway{
+  to{ opacity:0; transform:translateY(-28px) scale(.94); }
+}
+
+.letter{
+  position:relative;
+  max-width:640px;
+  margin:clamp(30px,6vw,44px) auto 0;
+  padding:clamp(26px,5.5vw,46px) clamp(22px,5.5vw,48px);
+  text-align:left;
+  border-radius:22px;
+  border:1px solid #f1ded4;
+  background:
+    radial-gradient(600px 260px at 100% 0%, #fff4f8 0%, rgba(255,244,248,0) 70%),
+    linear-gradient(175deg,#fffdfa,#fff8f1);
+  box-shadow:var(--shadow-lift);
+}
+.letter::before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border-radius:14px;
+  border:1px solid rgba(216,168,91,.28);
+  pointer-events:none;
+}
+.letter p{
+  margin:0 0 1.05em;
+  font-size:clamp(.97rem,2.65vw,1.06rem);
+  line-height:1.85;
+  color:#5c414c;
+  opacity:0;
+  transform:translateY(10px);
+  animation:letterLine .8s cubic-bezier(.2,.8,.25,1) forwards;
+  animation-delay:calc(var(--i,0) * .34s + .1s);
+}
+@keyframes letterLine{
+  to{ opacity:1; transform:none; }
+}
+.letter__hello{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,5vw,1.95rem) !important;
+  line-height:1.3 !important;
+  color:var(--plum) !important;
+  margin-bottom:1.1em !important;
+}
+.letter__sig{
+  margin-top:1.6em !important;
+  text-align:right;
+  font-family:var(--script);
+  font-size:clamp(1.9rem,7vw,2.5rem) !important;
+  line-height:1.2 !important;
+  color:var(--rose-deep) !important;
+}
+.letter__ps{
+  margin-top:1.9em !important;
+  padding-top:1.1em !important;
+  border-top:1px dashed rgba(216,168,91,.5);
+  font-size:.86rem !important;
+  color:var(--muted) !important;
+  font-style:italic;
+}
+.letter:focus{ outline:none; }
+
+.finale__foot{ margin-top:2.6rem; }
+
+/* ── responsive ────────────────────────────── */
+
+@media (max-width:560px){
+  .balloon-field{ height:clamp(260px,38vh,320px); }
+  .wishes{ grid-template-columns:1fr; }
+  .match__face{ border-radius:12px; }
+  .match__face--back::before{ font-size:1.25rem; }
+  .screen--stage{ padding-left:14px; padding-right:14px; }
+  .letter{ border-radius:18px; }
+  .letter::before{ inset:7px; }
+}
+
+@media (min-width:900px){
+  .balloon-field{ height:400px; }
+}
+
+/* ── motion preferences ────────────────────── */
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .petal{ display:none; }
+  .letter p{ opacity:1; transform:none; }
+  .finale__title{ opacity:1; filter:none; transform:none; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="sky" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<button class="music-btn" id="musicBtn" type="button" aria-pressed="false" aria-label="Toggle music">
+  <span class="music-btn__icon" aria-hidden="true">♪</span>
+</button>
+
+<main id="app">
+
+  <!-- ───────────── intro ───────────── -->
+  <section class="screen screen--intro is-active" id="intro">
+    <div class="intro__inner">
+      <p class="eyebrow">a little something, made only for you</p>
+      <h1 class="intro__title">For <span class="ink-gradient">Devyashree</span></h1>
+      <p class="intro__sub">Three tiny games, one wish, and a letter I've been meaning to write for a while.</p>
+      <button class="btn btn--primary" id="startBtn" type="button">Open it <span aria-hidden="true">♡</span></button>
+      <p class="hint">headphones on, if you can</p>
+    </div>
+  </section>
+
+  <!-- ───────────── rounds ───────────── -->
+  <section class="screen screen--stage" id="stage">
+    <div class="stage__inner">
+
+      <header class="hud">
+        <span class="hud__label" id="roundLabel">Round 1 of 3</span>
+        <span class="dots" id="dots" aria-hidden="true">
+          <span class="dot is-current"></span><span class="dot"></span><span class="dot"></span>
+        </span>
+      </header>
+
+      <!-- round 1 -->
+      <div class="round is-active" id="round1">
+        <h2 class="round__title">Pop a little wish</h2>
+        <p class="round__sub">Six balloons. Six things I kept forgetting to say out loud.</p>
+
+        <div class="balloon-field" id="balloonField"></div>
+        <div class="wishes" id="wishes"></div>
+
+        <div class="round__foot">
+          <p class="hint" id="balloonHint">tap a balloon</p>
+          <button class="btn btn--ghost" id="toRound2" type="button" hidden>Next <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <!-- round 2 -->
+      <div class="round" id="round2">
+        <h2 class="round__title">Little things I remember</h2>
+        <p class="round__sub">Turn them over, two at a time. Every pair is a piece of us.</p>
+
+        <div class="match" id="matchGrid" role="grid" aria-label="Memory game"></div>
+        <p class="match__note" id="matchNote" aria-live="polite">0 of 4 pairs found</p>
+
+        <div class="round__foot">
+          <button class="btn btn--ghost" id="toRound3" type="button" hidden>Next <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <!-- round 3 -->
+      <div class="round" id="round3">
+        <h2 class="round__title">Make a wish</h2>
+        <p class="round__sub">Three candles, one wish. Take your time — I'll wait.</p>
+
+        <div class="cake" id="cake">
+          <div class="cake__candles" id="candles">
+            <button class="candle" type="button" aria-label="Candle 1"><span class="candle__flame"></span></button>
+            <button class="candle" type="button" aria-label="Candle 2"><span class="candle__flame"></span></button>
+            <button class="candle" type="button" aria-label="Candle 3"><span class="candle__flame"></span></button>
+          </div>
+          <div class="cake__top" aria-hidden="true"></div>
+          <div class="cake__body" aria-hidden="true"></div>
+          <div class="cake__plate" aria-hidden="true"></div>
+        </div>
+
+        <div class="cake__actions">
+          <button class="btn btn--ghost btn--small" id="micBtn" type="button">Blow for real</button>
+          <p class="hint" id="cakeHint">or tap each flame</p>
+        </div>
+
+        <p class="wish-made" id="wishMade" hidden>Wish made. Don't say it out loud. ♡</p>
+
+        <div class="round__foot">
+          <button class="btn btn--primary" id="toFinale" type="button" hidden>There's one more thing <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────── finale ───────────── -->
+  <section class="screen screen--finale" id="finale">
+    <div class="finale__inner">
+
+      <p class="eyebrow">today is your day</p>
+      <h1 class="finale__title">Happy Birthday<br><span class="ink-gradient">Devyashree</span></h1>
+      <p class="finale__sub">Two years of you. A whole lifetime of this to go.</p>
+
+      <div class="envelope-wrap" id="envelopeWrap">
+        <button class="envelope" id="openLetter" type="button" aria-label="Open your letter">
+          <span class="envelope__letter" aria-hidden="true"></span>
+          <span class="envelope__flap" aria-hidden="true"></span>
+          <span class="envelope__front" aria-hidden="true"></span>
+          <span class="envelope__seal" aria-hidden="true">♡</span>
+        </button>
+        <p class="hint">tap to open your letter</p>
+      </div>
+
+      <article class="letter" id="letter" hidden>
+        <p class="letter__hello" style="--i:0">My Devyashree,</p>
+
+        <p style="--i:1">Two years ago, I didn't know that one conversation could turn into a habit, and a habit into the softest part of my life. Somewhere between the ordinary messages and the calls that always ran too late, you became the person I tell everything to.</p>
+
+        <p style="--i:2">Thank you for two years of being exactly who you are — for laughing at your own jokes before you finish them, for the kindness you hand out so easily, for the way you make an ordinary Tuesday feel like something worth remembering.</p>
+
+        <p style="--i:3">I love the quiet version of us too: the unglamorous days, the comfortable silences, the small "did you eat?" messages. That's the part nobody else sees, and it's my favourite part.</p>
+
+        <p style="--i:4">I know I'm not perfect. But I hope you always feel how loved you are — on the loud days and the tired ones, on your best days and the days you don't quite feel like yourself. I'm not going anywhere.</p>
+
+        <p style="--i:5">Today the world celebrates the day you arrived in it. I get to celebrate that, and the fact that out of everyone, you chose to spend your days with me. Two years in, that still feels like the luckiest thing that has ever happened to me.</p>
+
+        <p style="--i:6">Happy birthday, my love. Here's to a year that's gentle with you — and to every birthday after this one, where I get to be the one writing you something like this.</p>
+
+        <p style="--i:7">I love you. Today, and in all the ordinary days after.</p>
+
+        <p class="letter__sig" style="--i:8">Always, Raktim <span aria-hidden="true">♡</span></p>
+
+        <p class="letter__ps" style="--i:9">P.S. — whenever you miss me, come back and open this again. I'll be right here.</p>
+      </article>
+
+      <div class="finale__foot" id="finaleFoot" hidden>
+        <button class="btn btn--link" id="replay" type="button">play it again</button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<noscript>
+  <p style="text-align:center;padding:40px;font-family:Georgia,serif">Turn JavaScript on, love — there's a whole surprise waiting.</p>
+</noscript>
+
+<audio id="bgm" src="audio/jug-jug-jeeve.mp3" loop preload="none"></audio>
+
+<script>
+/* ─────────────────────────────────────────────
+   Happy Birthday, Devyashree
+   Three little rounds, one wish, one letter.
+   ───────────────────────────────────────────── */
+
+(() => {
+  'use strict';
+
+  const $  = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ═══════════════════════════════════════════
+     Audio engine (shared context)
+     ═══════════════════════════════════════════ */
+
+  const AudioKit = (() => {
+    let ctx = null;
+
+    function get() {
+      if (!ctx) {
+        const Ctor = window.AudioContext || window.webkitAudioContext;
+        if (!Ctor) return null;
+        ctx = new Ctor();
+      }
+      if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+      return ctx;
+    }
+
+    function tone(freq, { dur = 0.2, type = 'sine', vol = 0.1, glide = null, delay = 0 } = {}) {
+      const ac = get();
+      if (!ac) return;
+      const t = ac.currentTime + delay;
+      const osc = ac.createOscillator();
+      const g = ac.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, t);
+      if (glide) osc.frequency.exponentialRampToValueAtTime(Math.max(20, glide), t + dur);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol, t + 0.012);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      osc.connect(g).connect(ac.destination);
+      osc.start(t);
+      osc.stop(t + dur + 0.05);
+    }
+
+    function noise({ dur = 0.3, vol = 0.08, from = 2400, to = 400, delay = 0 } = {}) {
+      const ac = get();
+      if (!ac) return;
+      const t = ac.currentTime + delay;
+      const len = Math.max(1, Math.floor(ac.sampleRate * dur));
+      const buffer = ac.createBuffer(1, len, ac.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < len; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 1.6);
+      }
+      const src = ac.createBufferSource();
+      src.buffer = buffer;
+
+      const filter = ac.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(from, t);
+      filter.frequency.exponentialRampToValueAtTime(to, t + dur);
+
+      const g = ac.createGain();
+      g.gain.setValueAtTime(vol, t);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+
+      src.connect(filter).connect(g).connect(ac.destination);
+      src.start(t);
+    }
+
+    return {
+      get,
+      pop() {
+        tone(520, { dur: 0.09, type: 'sine', vol: 0.14, glide: 180 });
+        noise({ dur: 0.07, vol: 0.05, from: 3200, to: 900 });
+      },
+      chime() {
+        tone(1046.5, { dur: 0.32, type: 'sine', vol: 0.075 });
+        tone(1568, { dur: 0.4, type: 'sine', vol: 0.05, delay: 0.09 });
+      },
+      match() {
+        [1046.5, 1318.5, 1568].forEach((f, i) =>
+          tone(f, { dur: 0.45, type: 'sine', vol: 0.06, delay: i * 0.075 })
+        );
+      },
+      blow() {
+        noise({ dur: 0.55, vol: 0.1, from: 1100, to: 180 });
+      },
+      sparkle() {
+        [1318.5, 1568, 2093].forEach((f, i) =>
+          tone(f, { dur: 0.7, type: 'sine', vol: 0.05, delay: i * 0.11 })
+        );
+      }
+    };
+  })();
+
+  /* ═══════════════════════════════════════════
+     Music — a soft, original instrumental.
+     If audio/jug-jug-jeeve.mp3 exists it plays
+     that instead.
+     ═══════════════════════════════════════════ */
+
+  const Music = (() => {
+    const audioEl = $('#bgm');
+    const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
+    const BEAT = 60 / 66;
+    const LOOP = 16 * BEAT;
+
+    // F · Dm · Bb · C
+    const CHORDS = [
+      [53, 57, 60, 65],
+      [50, 53, 57, 62],
+      [46, 50, 53, 58],
+      [48, 52, 55, 60]
+    ];
+    const ARP = [0, 2, 1, 2, 3, 2, 1, 2];
+    const MELODY = [
+      [[0, 65], [1.5, 69], [2.5, 72]],
+      [[0, 74], [1, 72], [2.5, 69]],
+      [[0, 70], [1.5, 74], [2.5, 77]],
+      [[0, 76], [1, 72], [2, 67], [3, 72]]
+    ];
+
+    let started = false;
+    let enabled = false;
+    let usingFile = false;
+    let ctx = null;
+    let master = null;
+    let reverb = null;
+    let scheduleTimer = null;
+    let fileFade = null;
+
+    function updateButton() {
+      const btn = $('#musicBtn');
+      if (!btn) return;
+      const on = started && enabled;
+      btn.classList.toggle('is-on', on);
+      btn.classList.toggle('is-muted', started && !enabled);
+      btn.setAttribute('aria-pressed', String(on));
+    }
+
+    function fadeMaster(to, seconds) {
+      if (!master || !ctx) return;
+      const t = ctx.currentTime;
+      master.gain.cancelScheduledValues(t);
+      master.gain.setValueAtTime(master.gain.value, t);
+      master.gain.linearRampToValueAtTime(to, t + seconds);
+    }
+
+    function impulse(seconds, decay) {
+      const rate = ctx.sampleRate;
+      const len = Math.floor(rate * seconds);
+      const buf = ctx.createBuffer(2, len, rate);
+      for (let ch = 0; ch < 2; ch++) {
+        const d = buf.getChannelData(ch);
+        for (let i = 0; i < len; i++) {
+          d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
+        }
+      }
+      return buf;
+    }
+
+    function note(midi, at, dur, vol, type) {
+      const osc = ctx.createOscillator();
+      const g = ctx.createGain();
+      osc.type = type;
+      osc.frequency.value = mtof(midi);
+      g.gain.setValueAtTime(0.0001, at);
+      g.gain.exponentialRampToValueAtTime(vol, at + 0.03);
+      g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+      osc.connect(g);
+      g.connect(master);
+      if (reverb) g.connect(reverb);
+      osc.start(at);
+      osc.stop(at + dur + 0.06);
+    }
+
+    function scheduleLoop(t0) {
+      if (!ctx) return;
+
+      CHORDS.forEach((chord, bar) => {
+        const barStart = t0 + bar * 4 * BEAT;
+        const open = [chord[0], chord[1], chord[2], chord[3]];
+
+        // rolling arpeggio
+        ARP.forEach((idx, i) => {
+          const midi = open[idx] + (idx === 3 ? 0 : 12);
+          note(midi, barStart + i * BEAT * 0.5, 1.25, 0.038, 'triangle');
+        });
+
+        // warm bass pad
+        note(chord[0] - 12, barStart, 4 * BEAT, 0.05, 'sine');
+
+        // melody bell
+        MELODY[bar].forEach(([beat, midi]) => {
+          note(midi, barStart + beat * BEAT, 1.9, 0.062, 'sine');
+          note(midi + 12, barStart + beat * BEAT, 1.1, 0.012, 'sine');
+        });
+      });
+
+      const wait = Math.max(300, (t0 + LOOP - ctx.currentTime - 1.4) * 1000);
+      scheduleTimer = window.setTimeout(() => scheduleLoop(t0 + LOOP), wait);
+    }
+
+    function startSynth() {
+      ctx = AudioKit.get();
+      if (!ctx) return;
+
+      master = ctx.createGain();
+      master.gain.value = 0.0001;
+      master.connect(ctx.destination);
+
+      try {
+        reverb = ctx.createConvolver();
+        reverb.buffer = impulse(2.8, 2.6);
+        const wet = ctx.createGain();
+        wet.gain.value = 0.26;
+        reverb.connect(wet).connect(master);
+      } catch (err) {
+        reverb = null;
+      }
+
+      scheduleLoop(ctx.currentTime + 0.15);
+      fadeMaster(0.5, 3);
+    }
+
+    function fadeFileIn() {
+      if (!audioEl) return;
+      window.clearInterval(fileFade);
+      audioEl.volume = 0;
+      fileFade = window.setInterval(() => {
+        audioEl.volume = Math.min(0.5, audioEl.volume + 0.02);
+        if (audioEl.volume >= 0.5) window.clearInterval(fileFade);
+      }, 90);
+    }
+
+    function start() {
+      if (started) {
+        setOn(true);
+        return;
+      }
+      started = true;
+      enabled = true;
+      document.body.classList.add('music-ready');
+
+      if (audioEl && audioEl.getAttribute('src')) {
+        let attempt = null;
+        try {
+          attempt = audioEl.play();
+        } catch (err) {
+          attempt = null;
+        }
+        if (attempt && typeof attempt.then === 'function') {
+          attempt
+            .then(() => {
+              if (!started) return;
+              usingFile = true;
+              fadeFileIn();
+              updateButton();
+            })
+            .catch(() => {
+              if (usingFile) return;
+              startSynth();
+              if (!enabled) setOn(false);
+              updateButton();
+            });
+          updateButton();
+          return;
+        }
+      }
+
+      startSynth();
+      updateButton();
+    }
+
+    function setOn(on) {
+      enabled = on;
+      if (on && !started) {
+        start();
+        return;
+      }
+      if (usingFile && audioEl) {
+        if (on) {
+          audioEl.play().catch(() => {});
+          fadeFileIn();
+        } else {
+          audioEl.pause();
+        }
+      } else if (master) {
+        fadeMaster(on ? 0.5 : 0.0001, on ? 1.6 : 0.7);
+      }
+      updateButton();
+    }
+
+    return {
+      start,
+      toggle() {
+        if (!started) {
+          start();
+          return true;
+        }
+        setOn(!enabled);
+        return enabled;
+      },
+      isOn: () => started && enabled
+    };
+  })();
+
+  $('#musicBtn').addEventListener('click', () => {
+    Music.toggle();
+  });
+
+  /* ═══════════════════════════════════════════
+     Confetti
+     ═══════════════════════════════════════════ */
+
+  const Confetti = (() => {
+    const canvas = $('#confetti');
+    const g = canvas.getContext('2d');
+    const COLORS = ['#e2607d', '#f4a6bd', '#d8a85b', '#c2589a', '#8b6ad6', '#ff9fb8', '#ffe9c9'];
+    let parts = [];
+    let raf = null;
+    let last = 0;
+    let dpr = 1;
+
+    function resize() {
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      canvas.width = Math.floor(window.innerWidth * dpr);
+      canvas.height = Math.floor(window.innerHeight * dpr);
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function make(x, y, opts = {}) {
+      const {
+        count = 24,
+        power = 8,
+        spread = Math.PI * 2,
+        angle = -Math.PI / 2,
+        hearts = 0.45,
+        gravity = 0.16
+      } = opts;
+
+      for (let i = 0; i < count; i++) {
+        const a = angle + (Math.random() - 0.5) * spread;
+        const speed = power * (0.45 + Math.random() * 0.9);
+        parts.push({
+          x, y,
+          vx: Math.cos(a) * speed,
+          vy: Math.sin(a) * speed - (opts.lift || 1),
+          size: 4 + Math.random() * 7,
+          color: COLORS[(Math.random() * COLORS.length) | 0],
+          rot: Math.random() * Math.PI,
+          vr: (Math.random() - 0.5) * 0.3,
+          life: 1,
+          decay: 0.006 + Math.random() * 0.007,
+          gravity,
+          heart: Math.random() < hearts,
+          wiggle: Math.random() * Math.PI * 2
+        });
+      }
+      if (parts.length > 900) parts = parts.slice(-900);
+      if (!raf) {
+        last = performance.now();
+        raf = requestAnimationFrame(tick);
+      }
+    }
+
+    function rain(count = 60) {
+      const w = window.innerWidth;
+      for (let i = 0; i < count; i++) {
+        parts.push({
+          x: Math.random() * w,
+          y: -20 - Math.random() * window.innerHeight * 0.4,
+          vx: (Math.random() - 0.5) * 1.4,
+          vy: 1.5 + Math.random() * 2.4,
+          size: 4 + Math.random() * 7,
+          color: COLORS[(Math.random() * COLORS.length) | 0],
+          rot: Math.random() * Math.PI,
+          vr: (Math.random() - 0.5) * 0.22,
+          life: 1,
+          decay: 0.0022,
+          gravity: 0.02,
+          heart: Math.random() < 0.5,
+          wiggle: Math.random() * Math.PI * 2
+        });
+      }
+      if (parts.length > 900) parts = parts.slice(-900);
+      if (!raf) {
+        last = performance.now();
+        raf = requestAnimationFrame(tick);
+      }
+    }
+
+    function heartPath(size) {
+      const s = size / 8;
+      g.beginPath();
+      g.moveTo(0, 2.6 * s);
+      g.bezierCurveTo(-4.6 * s, -0.6 * s, -3.2 * s, -5.2 * s, 0, -2.6 * s);
+      g.bezierCurveTo(3.2 * s, -5.2 * s, 4.6 * s, -0.6 * s, 0, 2.6 * s);
+      g.closePath();
+      g.fill();
+    }
+
+    function tick(now) {
+      const dt = Math.min(2.5, (now - last) / 16.67);
+      last = now;
+      g.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i];
+        p.wiggle += 0.06 * dt;
+        p.vy += p.gravity * dt;
+        p.vx *= 0.995;
+        p.x += p.vx * dt + Math.sin(p.wiggle) * 0.35;
+        p.y += p.vy * dt;
+        p.rot += p.vr * dt;
+        p.life -= p.decay * dt;
+
+        if (p.life <= 0 || p.y > window.innerHeight + 60) {
+          parts.splice(i, 1);
+          continue;
+        }
+
+        g.save();
+        g.globalAlpha = Math.max(0, Math.min(1, p.life));
+        g.translate(p.x, p.y);
+        g.rotate(p.rot);
+        g.fillStyle = p.color;
+        if (p.heart) {
+          heartPath(p.size);
+        } else {
+          g.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+        }
+        g.restore();
+      }
+
+      if (parts.length) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = null;
+        g.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      }
+    }
+
+    return { make, rain, burst(x, y, count) { make(x, y, { count, power: 9 }); } };
+  })();
+
+  /* ═══════════════════════════════════════════
+     Petals
+     ═══════════════════════════════════════════ */
+
+  (function petals() {
+    if (reduceMotion) return;
+    const sky = $('#sky');
+    const count = window.innerWidth < 640 ? 9 : 15;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      const size = 6 + Math.random() * 10;
+      p.style.left = Math.random() * 100 + '%';
+      p.style.width = size + 'px';
+      p.style.height = size * 1.15 + 'px';
+      p.style.animationDuration = 14 + Math.random() * 16 + 's';
+      p.style.animationDelay = -Math.random() * 26 + 's';
+      p.style.filter = `blur(${Math.random() < 0.3 ? 1 : 0}px)`;
+      sky.appendChild(p);
+    }
+  })();
+
+  /* ═══════════════════════════════════════════
+     Screens + rounds
+     ═══════════════════════════════════════════ */
+
+  const state = { popped: 0, pairs: 0, out: 0, locked: false, micDone: false };
+
+  const screens = {
+    intro: $('#intro'),
+    stage: $('#stage'),
+    finale: $('#finale')
+  };
+
+  function showScreen(name) {
+    Object.entries(screens).forEach(([key, el]) => {
+      el.classList.toggle('is-active', key === name);
+    });
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  const roundEls = [$('#round1'), $('#round2'), $('#round3')];
+  const dots = $$('#dots .dot');
+
+  function setRound(n) {
+    roundEls.forEach((el, i) => el.classList.toggle('is-active', i === n - 1));
+    dots.forEach((d, i) => {
+      d.classList.toggle('is-current', i === n - 1);
+      d.classList.toggle('is-done', i < n - 1);
+    });
+    $('#roundLabel').textContent = `Round ${n} of 3`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* ── round 1 · balloons ───────────────────── */
+
+  const BALLOONS = [
+    { x: '2%',  y: '38%', c1: '#ffc7d6', c2: '#e8607d', dr: '5.6s', delay: '-0.4s',
+      msg: 'You make ordinary days feel like celebrations.' },
+    { x: '18%', y: '6%',  c1: '#ffe0b8', c2: '#e8a25c', dr: '4.9s', delay: '-1.8s',
+      msg: 'Two years in, and I still get a little excited when your name lights up my phone.' },
+    { x: '35%', y: '40%', c1: '#d9c7ff', c2: '#8b6ad6', dr: '6.2s', delay: '-2.6s',
+      msg: 'Your laugh is my favourite sound in the whole world.' },
+    { x: '52%', y: '8%',  c1: '#c9e9ff', c2: '#5f93c4', dr: '5.2s', delay: '-0.9s',
+      msg: 'Thank you for being so gentle with my heart.' },
+    { x: '69%', y: '41%', c1: '#ffd6e8', c2: '#c2589a', dr: '6.6s', delay: '-3.4s',
+      msg: 'Every plan I make quietly includes you.' },
+    { x: '86%', y: '10%', c1: '#d5f2df', c2: '#5aa87c', dr: '5.8s', delay: '-2.1s',
+      msg: "I'd choose you again. And again. And again." }
+  ];
+
+  const field = $('#balloonField');
+  const wishes = $('#wishes');
+  const balloonHint = $('#balloonHint');
+  const toRound2 = $('#toRound2');
+
+  function buildBalloons() {
+    state.popped = 0;
+    field.innerHTML = '';
+    wishes.innerHTML = '';
+    toRound2.hidden = true;
+    field.classList.remove('is-done');
+    balloonHint.textContent = 'tap a balloon';
+    balloonHint.hidden = false;
+
+    BALLOONS.forEach((b, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'balloon';
+      btn.setAttribute('aria-label', `Pop balloon ${i + 1}`);
+      btn.style.setProperty('--x', b.x);
+      btn.style.setProperty('--y', b.y);
+      btn.style.setProperty('--c1', b.c1);
+      btn.style.setProperty('--c2', b.c2);
+      btn.style.setProperty('--dr', b.dr);
+      btn.style.setProperty('--delay', b.delay);
+      btn.innerHTML = '<span class="balloon__body"></span><span class="balloon__string"></span>';
+
+      btn.addEventListener('click', () => popBalloon(btn, b));
+      field.appendChild(btn);
+    });
+  }
+
+  function popBalloon(el, data) {
+    if (el.classList.contains('is-popped')) return;
+    el.classList.add('is-popped');
+    el.setAttribute('tabindex', '-1');
+
+    const r = el.getBoundingClientRect();
+    Confetti.burst(r.left + r.width / 2, r.top + r.height / 2, 20);
+    AudioKit.pop();
+
+    const wish = document.createElement('p');
+    wish.className = 'wish';
+    wish.textContent = data.msg;
+    wishes.appendChild(wish);
+
+    state.popped++;
+    if (state.popped === BALLOONS.length) {
+      balloonHint.textContent = "that's all six ♡";
+      toRound2.hidden = false;
+      field.classList.add('is-done');
+      window.setTimeout(() => Confetti.rain(28), 250);
+    }
+  }
+
+  /* ── round 2 · memory ─────────────────────── */
+
+  const PAIRS = [
+    { icon: '☕', cap: 'Our first "just one coffee" that somehow turned into four hours.' },
+    { icon: '🎧', cap: 'Every song that quietly became about you.' },
+    { icon: '🌙', cap: "Late-night calls we kept saying we'd end. We never did." },
+    { icon: '🌸', cap: 'The little things you notice that no one else does.' }
+  ];
+
+  const grid = $('#matchGrid');
+  const matchNote = $('#matchNote');
+  const toRound3 = $('#toRound3');
+
+  function shuffle(list) {
+    const a = list.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function buildMatch() {
+    state.pairs = 0;
+    state.locked = false;
+    grid.innerHTML = '';
+    matchNote.textContent = '0 of 4 pairs found';
+    matchNote.classList.remove('is-swapping');
+    toRound3.hidden = true;
+
+    let deck = [];
+    PAIRS.forEach((p, i) => {
+      deck.push({ pair: i, icon: p.icon });
+      deck.push({ pair: i, icon: p.icon });
+    });
+    deck = shuffle(deck);
+
+    deck.forEach((card, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'match__card';
+      btn.dataset.pair = String(card.pair);
+      btn.dataset.index = String(idx);
+      btn.setAttribute('aria-label', 'Hidden card');
+      btn.innerHTML =
+        '<span class="match__inner">' +
+          '<span class="match__face match__face--back"></span>' +
+          '<span class="match__face match__face--front" aria-hidden="true">' + card.icon + '</span>' +
+        '</span>';
+
+      btn.addEventListener('click', () => flipCard(btn));
+      grid.appendChild(btn);
+    });
+  }
+
+  function flipCard(btn) {
+    if (state.locked) return;
+    if (btn.classList.contains('is-flipped') || btn.classList.contains('is-matched')) return;
+
+    btn.classList.add('is-flipped');
+    btn.setAttribute('aria-label', 'Revealed card');
+
+    const open = $$('.match__card.is-flipped:not(.is-matched)', grid);
+    if (open.length < 2) return;
+
+    const [a, b] = open;
+
+    if (a.dataset.pair === b.dataset.pair) {
+      // matched — keep both face up, no waiting
+      a.classList.add('is-matched');
+      b.classList.add('is-matched');
+      a.setAttribute('aria-label', 'Matched card');
+      b.setAttribute('aria-label', 'Matched card');
+      AudioKit.match();
+
+      const pair = PAIRS[Number(a.dataset.pair)];
+      matchNote.classList.add('is-swapping');
+      window.setTimeout(() => {
+        matchNote.textContent = pair.cap;
+        matchNote.classList.remove('is-swapping');
+      }, 220);
+
+      state.pairs++;
+      if (state.pairs === PAIRS.length) {
+        window.setTimeout(() => {
+          matchNote.textContent = 'All four. And a thousand more I’m saving for you.';
+        }, 1500);
+        toRound3.hidden = false;
+        Confetti.rain(30);
+        AudioKit.sparkle();
+      }
+    } else {
+      state.locked = true;
+      window.setTimeout(() => {
+        a.classList.remove('is-flipped');
+        b.classList.remove('is-flipped');
+        a.setAttribute('aria-label', 'Hidden card');
+        b.setAttribute('aria-label', 'Hidden card');
+        state.locked = false;
+      }, 780);
+    }
+  }
+
+  /* ── round 3 · candles ────────────────────── */
+
+  const candleEls = $$('.candle');
+  const wishMade = $('#wishMade');
+  const toFinale = $('#toFinale');
+  const cakeHint = $('#cakeHint');
+  const micBtn = $('#micBtn');
+
+  let micSession = 0;
+  let micStream = null;
+
+  function resetCake() {
+    micSession++;
+    if (micStream) {
+      micStream.getTracks().forEach((t) => t.stop());
+      micStream = null;
+    }
+    state.out = 0;
+    state.micDone = false;
+    candleEls.forEach((c) => c.classList.remove('is-out'));
+    wishMade.hidden = true;
+    toFinale.hidden = true;
+    cakeHint.textContent = 'or tap each flame';
+    micBtn.classList.remove('is-listening');
+    micBtn.innerHTML = 'Blow for real';
+  }
+
+  function blowOut(candle) {
+    if (!candle || candle.classList.contains('is-out')) return false;
+    candle.classList.add('is-out');
+    AudioKit.blow();
+    state.out++;
+
+    if (state.out === candleEls.length) {
+      wishMade.hidden = false;
+      toFinale.hidden = false;
+      cakeHint.textContent = 'you did it ♡';
+      micBtn.classList.remove('is-listening');
+      micBtn.innerHTML = 'Blow for real';
+      AudioKit.sparkle();
+      window.setTimeout(() => {
+        Confetti.rain(45);
+      }, 180);
+    }
+    return true;
+  }
+
+  candleEls.forEach((c) => {
+    c.addEventListener('click', () => blowOut(c));
+  });
+
+  micBtn.addEventListener('click', async () => {
+    if (state.out >= candleEls.length) return;
+    micBtn.classList.add('is-listening');
+    micBtn.innerHTML = 'listening…';
+    cakeHint.textContent = 'now blow gently toward the candles';
+
+    try {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error('unsupported');
+      }
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false }
+      });
+
+      const session = ++micSession;
+      micStream = stream;
+
+      const ctx = AudioKit.get();
+      const src = ctx.createMediaStreamSource(stream);
+      const analyser = ctx.createAnalyser();
+      analyser.fftSize = 1024;
+      src.connect(analyser);
+
+      const data = new Uint8Array(analyser.fftSize);
+      let lastBlow = 0;
+
+      const poll = () => {
+        if (session !== micSession) {
+          stream.getTracks().forEach((t) => t.stop());
+          return;
+        }
+        if (state.out >= candleEls.length) {
+          stream.getTracks().forEach((t) => t.stop());
+          return;
+        }
+        analyser.getByteTimeDomainData(data);
+        let sum = 0;
+        for (let i = 0; i < data.length; i++) {
+          const v = (data[i] - 128) / 128;
+          sum += v * v;
+        }
+        const rms = Math.sqrt(sum / data.length);
+        const now = performance.now();
+        if (rms > 0.13 && now - lastBlow > 420) {
+          lastBlow = now;
+          const next = candleEls.find((c) => !c.classList.contains('is-out'));
+          if (next) blowOut(next);
+        }
+        requestAnimationFrame(poll);
+      };
+      requestAnimationFrame(poll);
+    } catch (err) {
+      micBtn.classList.remove('is-listening');
+      micBtn.innerHTML = 'Blow for real';
+      cakeHint.textContent = 'no microphone, no problem — just tap each flame ♡';
+    }
+  });
+
+  /* ── finale ───────────────────────────────── */
+
+  const envelope = $('#openLetter');
+  const envelopeWrap = $('#envelopeWrap');
+  const letter = $('#letter');
+
+  function goFinale() {
+    showScreen('finale');
+    document.body.classList.add('music-ready');
+    Confetti.rain(70);
+    AudioKit.sparkle();
+  }
+
+  envelope.addEventListener('click', () => {
+    envelope.classList.add('is-open');
+    Music.start();
+    AudioKit.pop();
+
+    window.setTimeout(() => {
+      envelopeWrap.hidden = true;
+      letter.hidden = false;
+      letter.setAttribute('tabindex', '-1');
+      letter.focus({ preventScroll: true });
+      $('#finaleFoot').hidden = false;
+
+      const r = letter.getBoundingClientRect();
+      if (r.top > window.innerHeight * 0.55) {
+        const top = window.scrollY + r.top - 28;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+
+      Confetti.make(window.innerWidth / 2, window.innerHeight * 0.55, {
+        count: 40,
+        power: 11,
+        hearts: 0.7
+      });
+    }, 820);
+  });
+
+  /* ── reset / replay ───────────────────────── */
+
+  function replay() {
+    buildBalloons();
+    buildMatch();
+    resetCake();
+
+    envelope.classList.remove('is-open');
+    envelopeWrap.hidden = false;
+    letter.hidden = true;
+    $('#finaleFoot').hidden = true;
+
+    setRound(1);
+    showScreen('intro');
+    window.setTimeout(() => { envelope.style.animation = ''; }, 10);
+  }
+
+  /* ── wiring ───────────────────────────────── */
+
+  $('#startBtn').addEventListener('click', () => {
+    AudioKit.get();
+    showScreen('stage');
+    setRound(1);
+  });
+
+  toRound2.addEventListener('click', () => setRound(2));
+  toRound3.addEventListener('click', () => setRound(3));
+  toFinale.addEventListener('click', goFinale);
+  $('#replay').addEventListener('click', replay);
+
+  buildBalloons();
+  buildMatch();
+  resetCake();
+})();
+
+</script>
+</body>
+</html>
